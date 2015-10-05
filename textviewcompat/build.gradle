@@ -27,7 +27,7 @@ dependencies {
 
 uploadArchives {
     repositories.mavenDeployer {
-        def deployPath = file('../aar/')
+        def deployPath = file('../')
         repository(url: "file://${deployPath.absolutePath}")
         pom.project {
             groupId 'com.zoltanbalint'
