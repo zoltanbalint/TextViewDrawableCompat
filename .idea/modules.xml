@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TextViewDrawableCompat.iml" filepath="$PROJECT_DIR$/TextViewDrawableCompat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textviewcompat/textviewcompat.iml" filepath="$PROJECT_DIR$/textviewcompat/textviewcompat.iml" />
+    </modules>
+  </component>
+</project>

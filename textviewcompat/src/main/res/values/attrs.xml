@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="DTextView">
+        <attr name="drawableTint" format="color"/>
+    </declare-styleable>
+
+</resources>
