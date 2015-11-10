@@ -24,58 +24,18 @@
         android:text="Hello World!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
+
+    <com.zoltanbalint.textviewcompat.EditTextDC
         android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#3322FF"
+        app:drawableTint="@color/colorPrimary"
         android:text="Hello World!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
+    <com.zoltanbalint.textviewcompat.EditTextDC
         android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#CC88CC"
+        app:drawableTint="@color/colorAccent"
         android:text="Hello World!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#f2FF33"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#cccc99"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#00ff00"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#e031aa"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#f72642"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#982352"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <com.zoltanbalint.textviewcompat.TextViewDC
-        android:drawableTop="@drawable/abc_ic_menu_cut_mtrl_alpha"
-        app:drawableTint="#324898"
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 </LinearLayout>

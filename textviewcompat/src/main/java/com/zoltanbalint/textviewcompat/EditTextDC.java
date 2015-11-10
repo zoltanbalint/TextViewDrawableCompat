@@ -2,27 +2,20 @@ package com.zoltanbalint.textviewcompat;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.zoltanbalint.textviewcompat.util.DrawableUtil;
 
-public class TextViewDC extends TextView {
+public class EditTextDC extends EditText {
     private static int color = 0;
 
-    public TextViewDC(Context context) {
+    public EditTextDC(Context context) {
         super(context);
     }
 
-    public TextViewDC(Context context, AttributeSet attrs) {
+    public EditTextDC(Context context, AttributeSet attrs) {
         super(setColorInfoAndReturnContext(context, attrs), attrs);
     }
 
