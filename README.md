@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // ...
-    compile 'com.zoltanbalint:textview-drawable-tint-compat:1.0.0'
+    compile 'com.zoltanbalint:textview-drawable-tint-compat:1.0.1'
 }
 ```
 
