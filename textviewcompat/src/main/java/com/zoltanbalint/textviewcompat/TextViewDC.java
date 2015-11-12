@@ -2,13 +2,6 @@ package com.zoltanbalint.textviewcompat;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -16,7 +9,8 @@ import android.widget.TextView;
 import com.zoltanbalint.textviewcompat.util.DrawableUtil;
 
 public class TextViewDC extends TextView {
-    private static int color = 0;
+    private static int tmpColor = 0;
+    private int color = 0;
 
     public TextViewDC(Context context) {
         super(context);
@@ -24,6 +18,7 @@ public class TextViewDC extends TextView {
 
     public TextViewDC(Context context, AttributeSet attrs) {
         super(setColorInfoAndReturnContext(context, attrs), attrs);
+        this.color = tmpColor;
     }
 
     private static synchronized Context setColorInfoAndReturnContext(Context context, AttributeSet attrs) {
@@ -33,7 +28,7 @@ public class TextViewDC extends TextView {
                 0, 0
         );
         try {
-            color = a.getColor(R.styleable.DTextView_drawableTint, 0xff000000);
+            tmpColor = a.getColor(R.styleable.DTextView_drawableTint, 0xff000000);
         } catch (Exception e) {
             // TODO
         } finally {
@@ -45,6 +40,7 @@ public class TextViewDC extends TextView {
 
     @Override
     public void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom) {
+        final int color = this.color == 0 ? tmpColor : this.color;
         if (color != 0) {
             left = DrawableUtil.adjustColor(getContext(), left, color);
             top = DrawableUtil.adjustColor(getContext(), top, color);
