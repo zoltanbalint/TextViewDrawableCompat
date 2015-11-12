@@ -1,24 +1,21 @@
 package com.zoltanbalint.textviewcompat;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.CheckedTextView;
 
 import com.zoltanbalint.textviewcompat.util.DrawableUtil;
 
-import java.util.Arrays;
-
-public class TextViewDC extends TextView implements TintableCompoundDrawableView {
+public class CheckedTextViewDC extends CheckedTextView implements TintableCompoundDrawableView {
     private static int[] tmpColors = new int[]{0, 0, 0, 0};
     private int[] colors = new int[]{0, 0, 0, 0};
 
-    public TextViewDC(Context context) {
+    public CheckedTextViewDC(Context context) {
         super(context);
     }
 
-    public TextViewDC(Context context, AttributeSet attrs) {
+    public CheckedTextViewDC(Context context, AttributeSet attrs) {
         super(setColorInfoAndReturnContext(context, attrs), attrs);
         this.colors = tmpColors;
     }

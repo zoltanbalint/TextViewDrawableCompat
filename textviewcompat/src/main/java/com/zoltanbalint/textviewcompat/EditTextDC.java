@@ -1,16 +1,15 @@
 package com.zoltanbalint.textviewcompat;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.EditText;
 
 import com.zoltanbalint.textviewcompat.util.DrawableUtil;
 
-public class EditTextDC extends EditText implements TintableCompoundDrawable {
-    private static int tmpColor = 0;
-    private int color = 0;
+public class EditTextDC extends EditText implements TintableCompoundDrawableView {
+    private static int[] tmpColors = new int[]{0, 0, 0, 0};
+    private int[] colors = new int[]{0, 0, 0, 0};
 
     public EditTextDC(Context context) {
         super(context);
@@ -18,45 +17,32 @@ public class EditTextDC extends EditText implements TintableCompoundDrawable {
 
     public EditTextDC(Context context, AttributeSet attrs) {
         super(setColorInfoAndReturnContext(context, attrs), attrs);
-        color = tmpColor;
+        this.colors = tmpColors;
     }
 
     private static synchronized Context setColorInfoAndReturnContext(Context context, AttributeSet attrs) {
-        TypedArray a = context.getTheme().obtainStyledAttributes(
-                attrs,
-                R.styleable.DTextView,
-                0, 0
-        );
-        try {
-            tmpColor = a.getColor(R.styleable.DTextView_drawableTint, 0xff000000);
-        } catch (Exception e) {
-            // TODO
-        } finally {
-            // release the TypedArray so that it can be reused.
-            a.recycle();
-        }
+        tmpColors = DrawableUtil.parseAttributesForColorTint(context, attrs);
         return context;
     }
 
     @Override
     public void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom) {
-        final int color = this.color == 0 ? tmpColor : this.color;
-        if (color != 0) {
-            left = DrawableUtil.adjustColor(getContext(), left, color);
-            top = DrawableUtil.adjustColor(getContext(), top, color);
-            right = DrawableUtil.adjustColor(getContext(), right, color);
-            bottom = DrawableUtil.adjustColor(getContext(), bottom, color);
-        }
-        super.setCompoundDrawablesWithIntrinsicBounds(left, top, right, bottom);
+        final Drawable[] tintedDrawables = DrawableUtil.adjustTintForView(left, top, right, bottom, getContext(), this);
+        super.setCompoundDrawablesWithIntrinsicBounds(tintedDrawables[0], tintedDrawables[1], tintedDrawables[2], tintedDrawables[3]);
     }
 
     @Override
-    public int getColor() {
-        return 0;
+    public int[] getColors() {
+        return colors;
     }
 
     @Override
-    public void setColor(int color) {
+    public int[] getTmpColors() {
+        return tmpColors;
+    }
 
+    @Override
+    public boolean isBeingEdited() {
+        return isInEditMode();
     }
 }
