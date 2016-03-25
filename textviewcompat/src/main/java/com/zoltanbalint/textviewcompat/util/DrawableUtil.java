@@ -55,7 +55,7 @@ public class DrawableUtil {
             tmpColors[2] = a.getColor(R.styleable.DTextView_drawableTintRight, tmpColor);
             tmpColors[3] = a.getColor(R.styleable.DTextView_drawableTintBottom, tmpColor);
         } catch (Exception e) {
-            // TODO
+            // nothing to see here
         } finally {
             // release the TypedArray so that it can be reused.
             a.recycle();
